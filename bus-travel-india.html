@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RouteMitra — Bus Travel & Tourism Management, India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="bus-travel-india.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><span class="mark"></span> RouteMitra</div>
+    <div class="navlinks">
+      <a href="#destinations">Destinations</a>
+      <a href="#journeys">Bus journeys</a>
+      <a href="#seats">Pick seats</a>
+      <a href="#book">Book a bus</a>
+    </div>
+    <a href="#book" class="navcta">Book now</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">Bus Travel & Tourism Management · India</span>
+      <h1>Every route across India, <em>booked</em> and boarded on time.</h1>
+      <p class="lede">RouteMitra manages intercity bus routes, seat availability, and bookings across India from one dashboard — sleeper, semi-sleeper, or Volvo, from Delhi to Kanyakumari.</p>
+      <div class="hero-stats">
+        <div><div class="num">120+</div><div class="lbl">Routes live</div></div>
+        <div><div class="num">3,400+</div><div class="lbl">Seats booked</div></div>
+        <div><div class="num">4.7</div><div class="lbl">Avg. rating</div></div>
+      </div>
+      <div class="led-board"><div class="led-text mono" id="ledText">NEXT DEPARTURE · DELHI TO MANALI · PLATFORM 4 · ON TIME</div></div>
+    </div>
+
+    <div class="pass">
+      <div class="pass-top">
+        <div class="route">
+          <div>
+            <div class="city">From</div>
+            <div class="code">BOARDING POINT</div>
+          </div>
+          <div class="route-line"></div>
+          <div>
+            <div class="city">To</div>
+            <div class="code">DESTINATION</div>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="from">Leaving from</label>
+            <select id="from">
+              <option>Delhi</option>
+              <option>Mumbai</option>
+              <option>Bengaluru</option>
+              <option>Jaipur</option>
+              <option>Kolkata</option>
+              <option>Pune</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="to">Going to</label>
+            <select id="to">
+              <option>Manali</option>
+              <option>Goa</option>
+              <option>Munnar</option>
+              <option>Udaipur</option>
+              <option>Varanasi</option>
+              <option>Amritsar</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="depart">Travel date</label>
+            <input id="depart" type="date">
+          </div>
+          <div class="field">
+            <label for="busType">Bus type</label>
+            <select id="busType">
+              <option>AC Sleeper</option>
+              <option>AC Semi-Sleeper</option>
+              <option>Volvo Multi-Axle</option>
+              <option>Non-AC Seater</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="pass-perforation"></div>
+      <div class="pass-divider"></div>
+      <div class="pass-bottom">
+        <span class="fine mono">FARE FROM — ₹550 &nbsp;·&nbsp; SEATS — LIVE</span>
+        <button class="btn-primary" onclick="document.getElementById('destinations').scrollIntoView()">Search buses</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="destinations">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">Destinations</span>
+        <h2>Where the next ticket takes you</h2>
+      </div>
+      <p>Filter by region to see the Indian destinations currently open for booking, each with a starting fare.</p>
+    </div>
+
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-region="all">All India</button>
+      <button class="tab" data-region="north">North</button>
+      <button class="tab" data-region="south">South</button>
+      <button class="tab" data-region="west">West</button>
+      <button class="tab" data-region="east">East</button>
+    </div>
+
+    <div class="dest-grid" id="destGrid">
+      <article class="postcard" data-region="north">
+        <div class="photo p-delhi"><span class="region-pill">North</span></div>
+        <div class="info"><h3>Delhi</h3><div class="meta"><span>Capital hub</span><span class="price">from ₹450</span></div></div>
+      </article>
+      <article class="postcard" data-region="north">
+        <div class="photo p-jaipur"><span class="region-pill">North</span></div>
+        <div class="info"><h3>Jaipur, Rajasthan</h3><div class="meta"><span>The Pink City</span><span class="price">from ₹650</span></div></div>
+      </article>
+      <article class="postcard" data-region="north">
+        <div class="photo p-manali"><span class="region-pill">North</span></div>
+        <div class="info"><h3>Manali, Himachal</h3><div class="meta"><span>Mountain highway</span><span class="price">from ₹1,450</span></div></div>
+      </article>
+      <article class="postcard" data-region="west">
+        <div class="photo p-mumbai"><span class="region-pill">West</span></div>
+        <div class="info"><h3>Mumbai</h3><div class="meta"><span>Coastal metro</span><span class="price">from ₹700</span></div></div>
+      </article>
+      <article class="postcard" data-region="west">
+        <div class="photo p-goa"><span class="region-pill">West</span></div>
+        <div class="info"><h3>Goa</h3><div class="meta"><span>Coastal cruiser</span><span class="price">from ₹950</span></div></div>
+      </article>
+      <article class="postcard" data-region="west">
+        <div class="photo p-udaipur"><span class="region-pill">West</span></div>
+        <div class="info"><h3>Udaipur, Rajasthan</h3><div class="meta"><span>Lake city</span><span class="price">from ₹650</span></div></div>
+      </article>
+      <article class="postcard" data-region="south">
+        <div class="photo p-bengaluru"><span class="region-pill">South</span></div>
+        <div class="info"><h3>Bengaluru</h3><div class="meta"><span>Tech corridor</span><span class="price">from ₹800</span></div></div>
+      </article>
+      <article class="postcard" data-region="south">
+        <div class="photo p-munnar"><span class="region-pill">South</span></div>
+        <div class="info"><h3>Munnar, Kerala</h3><div class="meta"><span>Tea hills</span><span class="price">from ₹820</span></div></div>
+      </article>
+      <article class="postcard" data-region="east">
+        <div class="photo p-kolkata"><span class="region-pill">East</span></div>
+        <div class="info"><h3>Kolkata</h3><div class="meta"><span>Cultural capital</span><span class="price">from ₹900</span></div></div>
+      </article>
+      <article class="postcard" data-region="east">
+        <div class="photo p-varanasi"><span class="region-pill">East</span></div>
+        <div class="info"><h3>Varanasi, UP</h3><div class="meta"><span>Ganga ghats</span><span class="price">from ₹1,150</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="steps-section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag" style="color:var(--marigold);">How it works</span>
+        <h2>Four stops from search to seat</h2>
+      </div>
+      <p>The same route every booking takes through the system, in order.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="n">01 / SEARCH</span>
+        <h3>Pick a route</h3>
+        <p>Choose your boarding point and destination across any Indian state.</p>
+      </div>
+      <div class="step">
+        <span class="n">02 / COMPARE</span>
+        <h3>Choose a bus</h3>
+        <p>Compare sleeper, semi-sleeper, and Volvo options by fare and duration.</p>
+      </div>
+      <div class="step">
+        <span class="n">03 / SELECT</span>
+        <h3>Pick your seat</h3>
+        <p>Use the live seat map to choose exactly where you sit on board.</p>
+      </div>
+      <div class="step">
+        <span class="n">04 / CONFIRM</span>
+        <h3>Book the ticket</h3>
+        <p>Submit traveler details once and get a single e-ticket for the trip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="journeys">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">Bus journeys</span>
+        <h2>Popular routes, ticketed and ready</h2>
+      </div>
+      <p>Each journey is priced per seat and includes onboard water, charging points, and a live tracking link.</p>
+    </div>
+    <div class="ticket-grid">
+      <div class="ticket">
+        <div class="ticket-main">
+          <div class="route-code">DEL → MNL · 14 HRS</div>
+          <h3>Delhi → Manali Highway Ride</h3>
+          <p>Overnight sleeper through the hills, arriving in Manali by early morning.</p>
+          <div class="tags"><span>AC Sleeper</span><span>Overnight</span><span>Blanket incl.</span></div>
+        </div>
+        <div class="ticket-stub">
+          <div><div class="price">₹1,450</div><div class="days">per seat</div></div>
+          <button class="add-btn" data-name="Delhi → Manali Highway Ride" data-price="1450">+ Add to trip</button>
+        </div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-main">
+          <div class="route-code">BOM → GOI · 9 HRS</div>
+          <h3>Mumbai → Goa Coastal Cruiser</h3>
+          <p>Evening departure along the Konkan coast, arriving in time for breakfast.</p>
+          <div class="tags"><span>Volvo Multi-Axle</span><span>Overnight</span><span>Charging port</span></div>
+        </div>
+        <div class="ticket-stub">
+          <div><div class="price">₹950</div><div class="days">per seat</div></div>
+          <button class="add-btn" data-name="Mumbai → Goa Coastal Cruiser" data-price="950">+ Add to trip</button>
+        </div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-main">
+          <div class="route-code">BLR → MUN · 8 HRS</div>
+          <h3>Bengaluru → Munnar Hill Route</h3>
+          <p>Winding through Western Ghats coffee estates into the Kerala tea hills.</p>
+          <div class="tags"><span>AC Semi-Sleeper</span><span>Day route</span><span>Scenic</span></div>
+        </div>
+        <div class="ticket-stub">
+          <div><div class="price">₹820</div><div class="days">per seat</div></div>
+          <button class="add-btn" data-name="Bengaluru → Munnar Hill Route" data-price="820">+ Add to trip</button>
+        </div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-main">
+          <div class="route-code">JAI → UDR · 6 HRS</div>
+          <h3>Jaipur → Udaipur Royal Route</h3>
+          <p>A straight run across Rajasthan from the Pink City to the City of Lakes.</p>
+          <div class="tags"><span>Non-AC Seater</span><span>Day route</span><span>Budget</span></div>
+        </div>
+        <div class="ticket-stub">
+          <div><div class="price">₹650</div><div class="days">per seat</div></div>
+          <button class="add-btn" data-name="Jaipur → Udaipur Royal Route" data-price="650">+ Add to trip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="seats" class="seat-section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">Pick seats</span>
+        <h2>Choose exactly where you sit</h2>
+      </div>
+      <p>Live seat map for the Delhi → Manali sleeper. Tap a seat to hold it.</p>
+    </div>
+    <div class="seat-wrap">
+      <div class="bus-shell">
+        <div class="bus-shell-head">
+          <span class="route mono">DEL → MNL &nbsp;·&nbsp; AC SLEEPER</span>
+          <span class="steer">🚌</span>
+        </div>
+        <div class="seat-grid" id="seatGrid"></div>
+        <div class="seat-legend">
+          <div class="item"><span class="dot" style="background:var(--signal-green);"></span> Available</div>
+          <div class="item"><span class="dot" style="background:var(--marigold);"></span> Selected</div>
+          <div class="item"><span class="dot" style="background:#3A3D55;"></span> Booked</div>
+        </div>
+      </div>
+      <div class="seat-summary">
+        <h3>Your seats</h3>
+        <div class="selected-list" id="selectedSeats">No seats selected yet.</div>
+        <div class="row"><span>Fare per seat</span><span class="mono">₹550</span></div>
+        <div class="row"><span>Seats chosen</span><span class="mono" id="seatCountRow">0</span></div>
+        <div class="grand" id="seatTotal">₹0</div>
+        <button class="btn-primary" style="width:100%;" onclick="addSeatsToTrip()">Add seats to trip</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">Travelers</span>
+        <h2>Notes from the highway</h2>
+      </div>
+      <p>A few lines from trips booked and tracked through RouteMitra.</p>
+    </div>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="quote">"Booked the Delhi–Manali sleeper and picked my window seat in under a minute."</div>
+        <div class="who">A. SHARMA — DELHI → MANALI HIGHWAY RIDE</div>
+      </div>
+      <div class="t-card">
+        <div class="quote">"The Mumbai to Goa Volvo showed up on time and the tracking link actually worked."</div>
+        <div class="who">P. NAIR — MUMBAI → GOA COASTAL CRUISER</div>
+      </div>
+      <div class="t-card">
+        <div class="quote">"Compared three bus types before booking Bengaluru to Munnar — saved real money."</div>
+        <div class="who">S. REDDY — BENGALURU → MUNNAR HILL ROUTE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap book-wrap">
+    <div class="book-side">
+      <span class="tag" style="color:var(--maroon); font-family:'JetBrains Mono',monospace; font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase; display:block; margin-bottom:10px;">Book a bus</span>
+      <h2>Send us your travel details</h2>
+      <p>Fill in what you know — we'll match it against live departures and confirm by SMS and email within the hour.</p>
+      <div class="mini-map">
+        <div class="row"><span>Confirmation time</span><span>&lt; 1 hr</span></div>
+        <div class="row"><span>Free cancellation</span><span>Up to 6 hrs before</span></div>
+        <div class="row"><span>Payment</span><span>UPI / Cards / Wallet</span></div>
+        <div class="row"><span>Support</span><span>24/7 helpline</span></div>
+      </div>
+    </div>
+
+    <form class="book-form" id="bookingForm">
+      <div class="frow">
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" type="text" required placeholder="Riya Sharma">
+        </div>
+        <div class="field">
+          <label for="mobile">Mobile number</label>
+          <input id="mobile" type="tel" required placeholder="+91 98765 43210">
+        </div>
+      </div>
+      <div class="frow">
+        <div class="field">
+          <label for="dest2">Destination</label>
+          <select id="dest2">
+            <option>Manali, Himachal</option>
+            <option>Goa</option>
+            <option>Munnar, Kerala</option>
+            <option>Udaipur, Rajasthan</option>
+            <option>Varanasi, UP</option>
+            <option>Amritsar, Punjab</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="depart2">Travel date</label>
+          <input id="depart2" type="date">
+        </div>
+      </div>
+      <div class="field full" style="margin-bottom:16px;">
+        <label for="notes">Notes for your travel manager</label>
+        <textarea id="notes" placeholder="Preferred boarding point, seat position, luggage..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%;">Request booking</button>
+      <div class="confirm-msg" id="confirmMsg">✓ Request received — your ticket details have been added to the trip planner below.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;"><span class="mark"></span> RouteMitra</div>
+        <p style="font-size:0.85rem; max-width:260px; color:rgba(247,242,231,0.55);">A bus travel and tourism management system for booking, seating, and tracking journeys across India.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#journeys">Bus journeys</a></li>
+          <li><a href="#seats">Pick seats</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Operators</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Cancellations</a></li>
+          <li><a href="#book">Book a bus</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ROUTEMITRA BUS TRAVEL & TOURISM MANAGEMENT · INDIA</span>
+      <span>HAPPY HIGHWAYS</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating trip planner -->
+<button class="cart-toggle" id="cartToggle" aria-label="Open trip planner">
+  TRIP <span class="count" id="cartCount">0</span>
+</button>
+<div class="trip-cart" id="tripCart">
+  <div class="trip-cart-head" id="cartHead">
+    <span class="title">Your trip planner</span>
+    <span class="mono" style="font-size:0.75rem; color:rgba(247,242,231,0.5);">✕</span>
+  </div>
+  <div class="trip-cart-body" id="cartBody">
+    <div class="empty-note">No journeys added yet.</div>
+  </div>
+  <div class="trip-cart-foot">
+    <span class="mono" style="font-size:0.72rem; color:rgba(247,242,231,0.5);">TOTAL</span>
+    <span class="total" id="cartTotal">₹0</span>
+  </div>
+</div>
+
+<script>
+  // ---- Destination region filter ----
+  const tabs = document.querySelectorAll('.tab');
+  const cards = document.querySelectorAll('.postcard');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const region = tab.dataset.region;
+      cards.forEach(card => {
+        card.style.display = (region === 'all' || card.dataset.region === region) ? '' : 'none';
+      });
+    });
+  });
+
+  // ---- Trip planner cart ----
+  const cart = [];
+  const cartToggle = document.getElementById('cartToggle');
+  const tripCart = document.getElementById('tripCart');
+  const cartHead = document.getElementById('cartHead');
+  const cartBody = document.getElementById('cartBody');
+  const cartCount = document.getElementById('cartCount');
+  const cartTotal = document.getElementById('cartTotal');
+
+  function renderCart(){
+    cartCount.textContent = cart.length;
+    if(cart.length === 0){
+      cartBody.innerHTML = '<div class="empty-note">No journeys added yet.</div>';
+    } else {
+      cartBody.innerHTML = cart.map((item, i) => `
+        <div class="cart-item">
+          <span>${item.name}</span>
+          <span style="display:flex; gap:10px; align-items:center;">
+            <span class="mono">₹${item.price}</span>
+            <span class="rm" data-i="${i}">remove</span>
+          </span>
+        </div>
+      `).join('');
+      cartBody.querySelectorAll('.rm').forEach(rm => {
+        rm.addEventListener('click', (e) => {
+          const idx = parseInt(e.target.dataset.i, 10);
+          cart.splice(idx, 1);
+          renderCart();
+          syncButtons();
+        });
+      });
+    }
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    cartTotal.textContent = '₹' + total.toLocaleString('en-IN');
+  }
+
+  function syncButtons(){
+    document.querySelectorAll('.add-btn').forEach(btn => {
+      const inCart = cart.some(item => item.name === btn.dataset.name);
+      btn.classList.toggle('added', inCart);
+      btn.textContent = inCart ? '✓ In your trip' : '+ Add to trip';
+    });
+  }
+
+  document.querySelectorAll('.add-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = btn.dataset.name;
+      const price = parseInt(btn.dataset.price, 10);
+      const existingIndex = cart.findIndex(item => item.name === name);
+      if(existingIndex > -1){
+        cart.splice(existingIndex, 1);
+      } else {
+        cart.push({ name, price });
+        tripCart.classList.add('open');
+      }
+      renderCart();
+      syncButtons();
+    });
+  });
+
+  cartToggle.addEventListener('click', () => tripCart.classList.toggle('open'));
+  cartHead.addEventListener('click', () => tripCart.classList.remove('open'));
+
+  // ---- Seat selector ----
+  const seatGrid = document.getElementById('seatGrid');
+  const bookedSeats = ['A2','B1','C3','D4','E2'];
+  const rows = ['A','B','C','D','E','F'];
+  const selected = new Set();
+  const FARE = 550;
+
+  function buildSeats(){
+    rows.forEach(row => {
+      for(let col = 1; col <= 4; col++){
+        if(col === 3){
+          const gap = document.createElement('div');
+          gap.className = 'seat aisle-gap';
+          seatGrid.appendChild(gap);
+        }
+        const id = row + col;
+        const btn = document.createElement('button');
+        btn.className = 'seat ' + (bookedSeats.includes(id) ? 'booked' : 'available');
+        btn.textContent = id;
+        btn.dataset.id = id;
+        if(!bookedSeats.includes(id)){
+          btn.addEventListener('click', () => toggleSeat(btn, id));
+        }
+        seatGrid.appendChild(btn);
+      }
+    });
+  }
+
+  function toggleSeat(btn, id){
+    if(selected.has(id)){
+      selected.delete(id);
+      btn.classList.remove('selected');
+      btn.classList.add('available');
+    } else {
+      selected.add(id);
+      btn.classList.remove('available');
+      btn.classList.add('selected');
+    }
+    updateSeatSummary();
+  }
+
+  function updateSeatSummary(){
+    const list = document.getElementById('selectedSeats');
+    const countRow = document.getElementById('seatCountRow');
+    const total = document.getElementById('seatTotal');
+    list.textContent = selected.size ? Array.from(selected).sort().join(', ') : 'No seats selected yet.';
+    countRow.textContent = selected.size;
+    total.textContent = '₹' + (selected.size * FARE).toLocaleString('en-IN');
+  }
+
+  function addSeatsToTrip(){
+    if(selected.size === 0) return;
+    const label = 'Delhi → Manali · Seats ' + Array.from(selected).sort().join(', ');
+    cart.push({ name: label, price: selected.size * FARE });
+    tripCart.classList.add('open');
+    renderCart();
+  }
+
+  buildSeats();
+
+  // ---- LED board rotating message ----
+  const ledMessages = [
+    'NEXT DEPARTURE · DELHI TO MANALI · PLATFORM 4 · ON TIME',
+    'NOW BOARDING · MUMBAI TO GOA · PLATFORM 2 · ON TIME',
+    'ARRIVING SOON · BENGALURU TO MUNNAR · PLATFORM 6'
+  ];
+  let ledIndex = 0;
+  setInterval(() => {
+    ledIndex = (ledIndex + 1) % ledMessages.length;
+    document.getElementById('ledText').textContent = ledMessages[ledIndex];
+  }, 3800);
+
+  // ---- Booking form ----
+  const form = document.getElementById('bookingForm');
+  const confirmMsg = document.getElementById('confirmMsg');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    confirmMsg.classList.add('show');
+    form.reset();
+    setTimeout(() => confirmMsg.classList.remove('show'), 6000);
+  });
+
+  renderCart();
+</script>
+
+</body>
+</html>
